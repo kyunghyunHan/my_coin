@@ -34,6 +34,18 @@ BlockSec = "0xaddress"
 aptos account fund-with-faucet --account *address*
 ```
 
+## testnet
+
+```
+ aptos node run-local-testnet --with-faucet --force-restart
+```
+
+## 계약컴파일
+
+```
+aptos move compile
+```
+
 ## deploy
 
 ```
@@ -41,20 +53,38 @@ aptos publish
 
 ```
 
-## testnet
+## 기본계정 등록
 
 ```
- aptos node run-local-testnet --with-faucet --force-restart
+aptos move run --function-id 'default::bsc::register'
 ```
 
-## aptor copile
+## mint
 
 ```
-aptos move compile
+aptos move run  --function-id default::bsc::mint_coin --args address:"발매자" u64:10000000
 ```
 
-## aptos 함수실행
+## Transfer
 
 ```
- aptos move run --function-id default::bsc::mint_coin --args address:*address*  u64:1000000000
+aptos move run --function-id 0x1::coin::transfer --type-args *address1*::bsc::BSC --args address:*address2* u64:111
+```
+
+## 새로운 계정생성
+
+```
+aptos init --profile a2
+```
+
+## 새로운 계정 등록
+
+```
+aptos move run --profile 0xb76f4caa1c9d95ac20795c19f854ea45f38a8e0a9147300fd0329436543109ec --function-id default::bsc::register
+```
+
+## Transfer
+
+```
+aptos move run --function-id 0x1::coin::transfer --type-args *address1*::bsc::BSC --args address:*address2* u64:111
 ```
