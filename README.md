@@ -52,3 +52,9 @@ aptos publish
 ```
 aptos move compile
 ```
+
+## aptos 함수실행
+
+```
+ aptos move run --function-id default::bsc::mint_coin --args address:*address*  u64:1000000000
+```
