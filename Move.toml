@@ -1,0 +1,9 @@
+[package]
+name = 'my_coin'
+version = '1.0.0'
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+[addresses]
+BlockSec = "0xa604279e6129beb5fa225673daa13f0fa87095e9a576687d1924120a7777b2be"
