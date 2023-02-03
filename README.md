@@ -1,5 +1,13 @@
 # my_coin
 
+## aptos install
+
+- m1
+
+```
+brew install aptos
+```
+
 ## aptos init
 
 - mod와 private key 설정
@@ -28,16 +36,10 @@ subdir = 'aptos-move/framework/aptos-framework'
 BlockSec = "0xaddress"
 ```
 
-- 1APT add
+## faucet 1 coin
 
 ```
 aptos account fund-with-faucet --account *address*
-```
-
-## testnet
-
-```
- aptos node run-local-testnet --with-faucet --force-restart
 ```
 
 ## 계약컴파일
@@ -87,4 +89,10 @@ aptos move run --profile 0xb76f4caa1c9d95ac20795c19f854ea45f38a8e0a9147300fd0329
 
 ```
 aptos move run --function-id 0x1::coin::transfer --type-args *address1*::bsc::BSC --args address:*address2* u64:111
+```
+
+## testnet
+
+```
+ aptos node run-local-testnet --with-faucet --force-restart
 ```
